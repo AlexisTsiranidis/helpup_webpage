@@ -1,3 +1,5 @@
+
+/* === RESET AND BASE === */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,6 +7,7 @@ body {
   color: #333;
 }
 
+/* === HEADER === */
 .site-header {
   background-color: #175dd5;
   color: white;
@@ -15,11 +18,11 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .logo {
   width: 80px;
-  height: auto;
   border-radius: 10px;
   background-color: white;
   padding: 4px;
@@ -31,6 +34,7 @@ body {
   margin: 0 auto;
 }
 
+/* === MENU === */
 .menu {
   display: flex;
   justify-content: center;
@@ -39,9 +43,9 @@ body {
   padding: 0.8rem 1.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid #dbe5ff;
-  position: sticky;
   top: 0;
   z-index: 100;
+  flex-wrap: wrap;
 }
 
 .menu a {
@@ -51,13 +55,19 @@ body {
   padding: 0.4rem 0.75rem;
   border-radius: 6px;
   transition: background-color 0.2s, color 0.2s;
+  background-color: #f3f7ff;
+  box-shadow: 0 2px 6px rgba(23, 93, 213, 0.1);
+  border: 1px solid #d0e2ff;
 }
 
 .menu a:hover {
-  background-color: #e3edff;
-  color: #0c3bbd;
+  background-color: #175dd5;
+  color: white;
+  box-shadow: 0 2px 8px rgba(23, 93, 213, 0.3);
+  transform: translateY(-1px);
 }
 
+/* === SECTIONS === */
 section {
   margin-top: 2rem;
 }
@@ -67,13 +77,15 @@ section h2 {
   padding-bottom: 0.5rem;
 }
 
+/* === FORMS === */
 form {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -88,6 +100,7 @@ button {
   cursor: pointer;
 }
 
+/* === DETAILS === */
 details {
   margin: 1rem 0;
   padding: 0.5rem;
@@ -101,6 +114,7 @@ details summary {
   font-weight: bold;
 }
 
+/* === FOOTER === */
 footer {
   text-align: center;
   padding: 1rem;
@@ -108,195 +122,14 @@ footer {
   background-color: #edf4ff;
 }
 
-.screenshot {
+/* === SCREENSHOTS === */
+.screenshot,
+.screenshot-gallery {
   text-align: center;
   margin: 2rem 0;
 }
 
-.screenshot img {
-  width: 200px;
-  max-width: 100%;
-}
-
-.caption {
-  font-size: 0.95rem;
-  color: #555;
-  margin-top: 0.5rem;
-  font-style: italic;
-}
-
-.app-intro {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
-
-.app-text {
-  flex: 1 1 55%;
-  text-align: justify;
-  line-height: 1.6;
-}
-#roles {
-  margin-top: 2rem;
-}
-
-.role-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.role-card {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 1rem;
-  background-color: #ffffff;
-  border: 1px solid #dbe5ff;
-  border-radius: 10px;
-  padding: 1rem;
-  flex: 1 1 300px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.role-card img {
-  width: 60px;
-  height: auto;
-}
-
-.role-info h3 {
-  margin: 0 0 0.5rem 0;
-  color: #175dd5;
-}
-
-.role-info p {
-  margin: 0;
-  text-align: justify;
-}
-
-@media (max-width: 768px) {
-  /* Header */
-  .header-flex {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-.menu {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  background-color: #ffffff;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  border-bottom: 2px solid #dbe5ff;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-radius: 0 0 20px 20px;
-}
-
-.menu a {
-  background-color: #f3f7ff;
-  color: #175dd5;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(23, 93, 213, 0.1);
-  border: 1px solid #d0e2ff;
-}
-
-.menu a:hover {
-  background-color: #175dd5;
-  color: white;
-  box-shadow: 0 2px 8px rgba(23, 93, 213, 0.3);
-  transform: translateY(-1px);
-}
-
-  .app-intro {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .app-text {
-    flex: 1 1 100%;
-    padding: 0 1rem;
-    text-align: justify;
-  }
-
-  .screenshot {
-    width: 100%;
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  .screenshot img {
-    width: 80%;
-    max-width: 200px;
-  }
-
-
-.role-card {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 0.75rem;
-  background-color: #ffffff;
-  border: 1px solid #dbe5ff;
-  border-radius: 10px;
-  padding: 0.75rem 1rem;
-  flex: 1 1 280px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  max-width: 320px;
-}
-
-.role-card img {
-  width: 50px;
-  height: auto;
-}
-
-.role-info h3 {
-  margin: 0 0 0.4rem 0;
-  font-size: 1.05rem;
-  color: #175dd5;
-}
-
-.role-info p {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.45;
-  text-align: justify;
-}
-
-
-  details {
-    margin: 0 1rem;
-  }
-
-  #contact {
-    padding: 0 1rem;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-.screenshot-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-
+.screenshot img,
 .screenshot-gallery img {
   width: 220px;
   max-width: 100%;
@@ -309,17 +142,63 @@ footer {
   transform: scale(1.05);
 }
 
-@media (max-width: 600px) {
-  .screenshot-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .screenshot-gallery img {
-    width: 90%;
-  }
+.caption {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.5rem;
+  font-style: italic;
 }
 
+/* === ROLES === */
+#roles {
+  margin-top: 2rem;
+}
+
+.role-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.role-card {
+  background-color: #ffffff;
+  border: 1px solid #dbe5ff;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.role-card img {
+  width: 60px;
+}
+
+.role-info h3 {
+  margin-bottom: 0.4rem;
+  color: #175dd5;
+}
+
+.role-info p,
+.role-info ul {
+  margin: 0;
+  text-align: left;
+  line-height: 1.45;
+}
+
+.role-info ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+.role-info li {
+  margin-bottom: 0.4rem;
+}
+
+/* === CAROUSEL === */
 .carousel-multi {
   position: relative;
   display: flex;
@@ -340,36 +219,16 @@ footer {
 }
 
 .screenshot-item {
-  flex: 0 0 25%; /* 4 εικόνες σε σειρά */
+  flex: 0 0 25%;
   padding: 1rem;
   text-align: center;
   box-sizing: border-box;
 }
 
-@media (max-width: 991px) {
-  .screenshot-item {
-    flex: 0 0 50%; /* 2 εικόνες για tablet */
-  }
-}
-
-@media (max-width: 600px) {
-  .screenshot-item {
-    flex: 0 0 100%; /* 1 εικόνα για κινητά */
-  }
-}
-
-
 .screenshot-item img {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
-.caption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #555;
-  font-style: italic;
 }
 
 .carousel-btn {
@@ -383,5 +242,94 @@ footer {
   z-index: 10;
 }
 
+.app-intro {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.app-text {
+  flex: 1 1 45%; 
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.screenshot-mockup {
+  flex: 1 1 25%;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.screenshot-mockup img {
+  width: 100%;
+  max-width: 200px; 
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.caption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+  font-style: italic;
+}
 
 
+/* === RESPONSIVE === */
+@media (max-width: 991px) {
+  .screenshot-item {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-flex {
+    flex-direction: column;
+  }
+
+  .app-intro {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .role-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .role-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .role-card img {
+    width: 80px;
+  }
+
+  .role-info ul {
+    padding-left: 1rem;
+    text-align: left;
+  }
+
+  .screenshot img {
+    width: 80%;
+  }
+
+  .screenshot-gallery img {
+    width: 90%;
+  }
+
+  .carousel-btn {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .screenshot-item {
+    flex: 0 0 100%;
+  }
+}
