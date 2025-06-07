@@ -3,24 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Οδηγίες Χρήσης - HelpUP</title>
+  <title>Η εφαρμογή HelpUP</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/helpup_favicon.png" />
+  <link rel="icon" type="image/webp" href="assets/helpup_favicon.webp" />
 </head>
 <body>
 
+<script>
+  let currentSlide = 0;
+
+  function moveSlide(direction) {
+    const track = document.getElementById("carouselTrack");
+    const trackContainer = track.parentElement;
+
+    const item = track.querySelector(".screenshot-item");
+    const itemWidth = item.offsetWidth + parseInt(getComputedStyle(item).marginRight);
+    const containerWidth = trackContainer.offsetWidth;
+
+    const totalWidth = track.scrollWidth;
+    const maxTranslateX = totalWidth - containerWidth;
+
+    currentSlide += direction;
+    const translateX = currentSlide * itemWidth;
+
+    if (translateX > maxTranslateX) {
+      currentSlide = Math.floor(maxTranslateX / itemWidth);
+    }
+    if (translateX < 0) {
+      currentSlide = 0;
+    }
+
+    track.style.transform = `translateX(-${currentSlide * itemWidth}px)`;
+  }
+
+  window.addEventListener('resize', () => moveSlide(0));
+</script>
+
+
+
+
+
   <header class="site-header">
     <div class="container header-flex">
-      <img src="assets/helpup_logo.png" alt="HelpUP logo" class="logo" />
+      <img src="assets/helpup_logo.webp" alt="HelpUP logo" class="logo" />
       <div>
         <h1>HelpUP</h1>
-        <p>Οδηγίες Χρήσης & Συχνές Ερωτήσεις</p>
+        <p>Παρουσίαση εφαρμογής αμφίδρομης επικοινωνίας ομάδων υποστήριξης κοινού</p>
       </div>
     </div>
   </header>
 
   <nav class="menu">
     <a href="#roles">Ρόλοι χρηστών</a>
+    <a href="#screenshots">Στιγμιότυπα εφαρμογής</a>
     <a href="#instructions">Οδηγίες</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Επικοινωνία</a>
@@ -31,10 +66,16 @@
   <h2>Η εφαρμογή</h2>
   <div class="app-intro">
     <div class="app-text">
-      <p>Η εφαρμογή <strong>HelpUP</strong> δημιουργήθηκε με σκοπό να καλύψει την ανάγκη για άμεση και αποτελεσματική επικοινωνία μεταξύ πολιτών που βρίσκονται σε κατάσταση ανάγκης και εκπαιδευμένων υποστηρικτών, όπως μέλη των Προσκόπων Κέρκυρας. Σε περιπτώσεις όπου κάποιος αντιμετωπίζει ένα πρακτικό πρόβλημα, μία επείγουσα κατάσταση ή χρειάζεται υποστήριξη σε επίπεδο καθημερινότητας, η εφαρμογή προσφέρει έναν άμεσο τρόπο υποβολής αιτήματος βοήθειας, αποστολής τοποθεσίας και ανταλλαγής μηνυμάτων σε πραγματικό χρόνο με διαθέσιμους υποστηρικτές. Μέσα από ένα φιλικό περιβάλλον, η HelpUP προάγει την αλληλεγγύη και τη συνεργασία, δημιουργώντας ένα ψηφιακό δίκτυο υποστήριξης που συνδέει ανθρώπους που χρειάζονται βοήθεια με αυτούς που μπορούν να προσφέρουν. Η εφαρμογή συμβάλλει ουσιαστικά στην ενίσχυση της κοινωνικής συνοχής και της ατομικής ασφάλειας, ειδικά σε περιόδους κρίσεων, φυσικών καταστροφών ή κοινωνικών προκλήσεων.</p>
+      <p>Η εφαρμογή <strong>HelpUP</strong> αναπτύχθηκε με σκοπό την κάλυψη της ανάγκης για άμεση, στοχευμένη και αποτελεσματική υποστήριξη πολιτών σε πραγματικό χρόνο, σε περιπτώσεις πρακτικών δυσκολιών ή έκτακτων αναγκών. Απευθύνεται κυρίως σε άτομα που χρειάζονται βοήθεια στην καθημερινότητά τους, αλλά και σε καταστάσεις κρίσεων, όπως φυσικές καταστροφές ή κοινωνικές προκλήσεις.
+
+Το σύστημα βασίζεται σε ένα δίκτυο εθελοντών υποστηρικτών οι οποίοι ανταποκρίνονται στα αιτήματα που υποβάλλονται από τους πολίτες μέσω της εφαρμογής. Οι πολίτες έχουν τη δυνατότητα να υποβάλουν νέα αιτήματα βοήθειας, συνοδευόμενα από την ακριβή τους τοποθεσία και σχετική περιγραφή, ώστε το σύστημα να προχωρήσει αυτόματα σε αντιστοίχιση με τον κατάλληλο διαθέσιμο υποστηρικτή.
+
+Η επικοινωνία μεταξύ των χρηστών πραγματοποιείται μέσω ενσωματωμένης λειτουργίας ανταλλαγής μηνυμάτων, ενώ δίνεται η δυνατότητα και για τηλεφωνική επικοινωνία. Παράλληλα, οι υποστηρικτές έχουν τη δυνατότητα να αναρτούν σχετικές δημοσιεύσεις, ενώ οι διαχειριστές διατηρούν εποπτικό ρόλο με δυνατότητες διαχείρισης χρηστών και εποπτείας.
+
+Η HelpUP συνδυάζει λειτουργικότητα και κοινωνική προσφορά, δημιουργώντας ένα ψηφιακό περιβάλλον υποστήριξης και ασφάλειας. Μέσω της αξιοποίησης τεχνολογιών όπως ο γεωεντοπισμός, η δυναμική αντιστοίχιση και η ασύγχρονη επικοινωνία, η εφαρμογή προωθεί την αλληλεγγύη και ενδυναμώνει την έννοια της κοινότητας, λειτουργώντας ως γέφυρα μεταξύ εκείνων που χρειάζονται βοήθεια και εκείνων που μπορούν να την προσφέρουν.</p>
     </div>
     <div class="screenshot">
-      <img src="assets/smartphone_mockup.png" alt="Στιγμιότυπο αρχικής σελίδας εφαρμογής HelpUP">
+      <img src="assets/smartphone_mockup.webp" alt="Στιγμιότυπο αρχικής σελίδας εφαρμογής HelpUP">
       <p class="caption">Στιγμιότυπο από την αρχική σελίδα της εφαρμογής HelpUP</p>
     </div>
   </div>
@@ -44,21 +85,21 @@
   <h2>Ρόλοι χρηστών</h2>
   <div class="role-row">
     <div class="role-card">
-      <img src="assets/citizen.png" alt="Πολίτης">
+      <img src="assets/citizen.webp" alt="Πολίτης">
       <div class="role-info">
         <h3>Πολίτης</h3>
         <p>Ο πολίτης είναι ο χρήστης που ζητά βοήθεια. Μπορεί να δημιουργεί αιτήματα, να αποστέλλει την τοποθεσία του, να συνομιλεί με υποστηρικτές και να διαβάζει αναρτήσεις στην εφαρμογή.</p>
       </div>
     </div>
     <div class="role-card">
-      <img src="assets/supporter.png" alt="Υποστηρικτής">
+      <img src="assets/supporter.webp" alt="Υποστηρικτής">
       <div class="role-info">
         <h3>Υποστηρικτής</h3>
         <p>Ο υποστηρικτής είναι εθελοντής που προσφέρει βοήθεια. Λαμβάνει αιτήματα, απαντά στις συνομιλίες, αλλάζει τη σημαντικότητα αιτημάτων και δημοσιεύει ενημερώσεις.</p>
       </div>
     </div>
     <div class="role-card">
-      <img src="assets/admin.png" alt="Διαχειριστής">
+      <img src="assets/admin.webp" alt="Διαχειριστής">
       <div class="role-info">
         <h3>Διαχειριστής</h3>
         <p>Ο διαχειριστής έχει εποπτικό ρόλο. Διαχειρίζεται τους χρήστες, καταχωρεί νέους υποστηρικτές ή διαχειριστές και έχει πρόσβαση σε δεδομένα χρηστών.</p>
@@ -66,6 +107,33 @@
     </div>
   </div>
 </section>
+
+<section id="screenshots">
+  <h2>Στιγμιότυπα από την εφαρμογή</h2>
+  <div class="carousel-multi">
+    <button class="carousel-btn prev" onclick="moveSlide(-1)">❮</button>
+
+    <div class="carousel-track-wrapper">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="screenshot-item"><img src="assets/login.webp" alt="Οθόνη σύνδεσης"><p class="caption">Οθόνη σύνδεσης</p></div>
+        <div class="screenshot-item"><img src="assets/homescreen_citizen.webp" alt="Αρχική Σελίδα Συνδεδεμένου Πολίτη"><p class="caption">Αρχική Σελίδα Συνδεδεμένου Πολίτη</p></div>
+        <div class="screenshot-item"><img src="assets/newrequest.webp" alt="Νέο αίτημα"><p class="caption">Νέο αίτημα</p></div>
+        <div class="screenshot-item"><img src="assets/requests.webp" alt="Αιτήματα"><p class="caption">Αιτήματα</p></div>
+        <div class="screenshot-item"><img src="assets/messages.webp" alt="Συνομιλία"><p class="caption">Συνομιλία</p></div>
+        <div class="screenshot-item"><img src="assets/citizenregister.webp" alt="Εγγραφή"><p class="caption">Εγγραφή</p></div>
+        <div class="screenshot-item"><img src="assets/posts.webp" alt="Δημοσιεύσεις"><p class="caption">Δημοσιεύσεις</p></div>
+        <div class="screenshot-item"><img src="assets/supporter_profile.webp" alt="Προφίλ Υποστηρικτή"><p class="caption">Προφίλ Υποστηρικτή</p></div>
+        <div class="screenshot-item"><img src="assets/homscreen_superuser.webp" alt="Αρχική Σελίδα Διαχειριστή"><p class="caption">Αρχική Σελίδα Διαχειριστή</p></div>
+        <div class="screenshot-item"><img src="assets/citizens_list.webp" alt="Λίστα Πολιτών (Διαχειριστής)"><p class="caption">Λίστα Πολιτών (Διαχειριστής)</p></div>
+      </div>
+    </div>
+
+    <button class="carousel-btn next" onclick="moveSlide(1)">❯</button>
+  </div>
+</section>
+
+
+
 
 
     <section id="instructions">
